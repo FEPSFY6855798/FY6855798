@@ -134,3 +134,209 @@ Toshihiko et al (2023).
 
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ENG0018 Lab H3: JavaScript Introduction</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        #colorButton {
+            padding: 10px;
+            background-color: #eee;
+            border: none;
+            cursor: pointer;
+        }
+        #chart_div {
+            width: 900px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ENG0018 Computer Laboratory: Lab H3 (Week 3)</h1>
+    <h2>Introduction to JavaScript</h2>
+    
+    
+    <p id="date&time"></p>
+    
+    <script>
+        // Display date and time on the webpage
+        const d = new Date();
+        document.getElementById("date&time").innerHTML = d;
+    </script>
+
+    
+    <h3>Change Button Colour Example</h3>
+    <button id="colorButton">Click me to change colour</button>
+
+    <script>
+        // Function to change the button color
+        var button = document.getElementById("colorButton");
+        function changeColor() {
+            var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            button.style.backgroundColor = randomColor;
+        }
+        button.addEventListener("click", changeColor);
+    </script>
+
+    
+    <h3>My Daily Activities Pie Chart</h3>
+    <div id="chart_div"></div>
+
+    <script type="text/javascript">
+        // Load Google Charts
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Draw the Pie Chart
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work', 8],
+                ['Sleep', 8],
+                ['Eat', 2],
+                ['Study', 4],
+                ['Exercise', 2]
+            ]);
+
+            var options = {
+                title: 'My Daily Activities'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    
+    <h3>Age vs. Salary Scatter Chart</h3>
+    <div id="scatter_chart_div"></div>
+
+    <script type="text/javascript">
+        // Load Scatter Chart
+        google.charts.setOnLoadCallback(drawScatterChart);
+
+        function drawScatterChart() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Age');
+            data.addColumn('number', 'Salary');
+
+            data.addRows([
+                [25, 40000],
+                [30, 50000],
+                [35, 60000],
+                [40, 75000],
+                [45, 80000],
+                [50, 90000]
+            ]);
+
+            var options = {
+                title: 'Age vs. Salary',
+                hAxis: { title: 'Age' },
+                vAxis: { title: 'Salary' }
+            };
+
+            var chart = new google.visualization.ScatterChart(document.getElementById('scatter_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    
+    <h3>City Population Bar Chart</h3>
+    <div id="bar_chart_div"></div>
+
+    <script type="text/javascript">
+        google.charts.setOnLoadCallback(drawBarChart);
+        function drawBarChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['City', 'Population'],
+                ['London', 9648000],
+                ['Birmingham', 1153900],
+                ['Edinburgh', 554000]
+            ]);
+
+            var options = {
+                title: 'Population of Cities in 2023',
+                hAxis: { title: 'City' },
+                vAxis: { title: 'Population' },
+                bars: 'vertical'
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('bar_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    
+    <h3>Population Trend Line Chart</h3>
+    <div id="line_chart_div"></div>
+
+    <script type="text/javascript">
+        google.charts.setOnLoadCallback(drawLineChart);
+        function drawLineChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'London', 'Birmingham', 'Edinburgh'],
+                ['2013', 8414000, 1092200, 495000],
+                ['2015', 8661000, 1113000, 507000],
+                ['2017', 8916000, 1137100, 519000],
+                ['2019', 9177000, 1141800, 531000],
+                ['2021', 9426000, 1142500, 543000],
+                ['2023', 9648000, 1153900, 554000]
+            ]);
+
+            var options = {
+                title: 'Population Trend (2013 - 2023)',
+                hAxis: { title: 'Year' },
+                vAxis: { title: 'Population' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    
+    <h3>Monthly Sales Column Chart</h3>
+    <div id="column_chart_div"></div>
+
+    <script type="text/javascript">
+        google.charts.setOnLoadCallback(drawColumnChart);
+        function drawColumnChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Month', 'Sales (in GBP)', { role: 'style' }],
+                ['Jan', 4000, '#3366cc'],
+                ['Feb', 4500, '#dc3912'],
+                ['Mar', 5200, '#ff9900'],
+                ['Apr', 6100, '#109618'],
+                ['May', 4900, '#990099'],
+                ['Jun', 6200, '#0099c6'],
+                ['Jul', 5300, '#dd4477'],
+                ['Aug', 5800, '#66aa00'],
+                ['Sep', 6700, '#b82e2e'],
+                ['Oct', 7100, '#316395'],
+                ['Nov', 6500, '#994499'],
+                ['Dec', 7200, '#22aa99']
+            ]);
+
+            var options = {
+                title: 'Monthly Sales in 2023',
+                hAxis: { title: 'Month' },
+                vAxis: { title: 'Sales (in GBP)' }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('column_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+</html>
