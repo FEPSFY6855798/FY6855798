@@ -45,31 +45,34 @@
     <h2 style="font-family:calibri;"><b>Conference paper: Developments in Sustainable Aviation</b></h2>
     <hr>
 
-    <!Table of Contents>
-    <h3>
-     Table of Contents
-    </h3>
-    <p class="ex1">
-      <table>
-        
-        <tr>
-          <td><a href= "#Abstract">Abstract</a></td>
-        </tr>
-        <tr>
-          <td><a href="#Introduction to sustainable engineering">Introduction to Sustainable Engineering</a></td>
-        </tr>
-       <tr>
-                <td><a href="#Innovation in Sustainable Aviation">Innovation in Sustainable Aviation</a></td>
-            </tr>
-        <tr>
-          <td><a href="#Presentation">Presentation</a></td>
-        </tr>
-        
-        <tr>
-          <td><a href="#Reference List">Reference List</a></td>
-        </tr>
-      </table>
-  </p>
+  <!table of contents>
+  <table>
+    <tr>
+      <th><h3>Table of contents</h3></th>
+    </tr>
+    <tr>
+      <td><a href="#Abstract">Abstract</td>
+    </tr>
+    <tr>
+      <td><a href="#Introduction to Sustainable Engineering">Introduction to Sustainable Engineering</td>
+    </tr>
+    <tr>
+      <td><a href="#Sustainable Aviation Fuels">Sustainable Aviation Fuels</td>
+    </tr>
+    <tr>
+      <td><a href="#Collins Aerospace">Collins Aerospace</td>
+    </tr>
+    <tr>
+      <td><a href="#Video Overview">Video Overview</td>
+    </tr>
+    <tr>
+      <td><a href="#Conclusion">Conclusion</td>
+    </tr>
+    <tr>
+      <td><a href="#Reference List">Reference List</td>
+    </tr>
+  </table>
+
 
   <!Abstract>
     <hr>
@@ -155,12 +158,16 @@ proven solution used in existing aircraft without the need for modifications” 
 This is concrete proof of how far sustainable engineering has come, and it will only get better. I see a future with advanced fuel cell and hydrogen technologies, 
 SAFs and potentially all-electric aircraft becoming the norm.
   
-        </pre>
-  <hr>
-  <h3 id="Presentation">Presentation</h3>
-  <p class="ex1">
-    <video src="Presenation 2.mp4" width="800" height="450" controls>
-    </video>
+     <hr>
+    <h3 id="Abstract">Abstract</h3>
+    <p class="ex1">
+      <pre>
+        This article is an insight into a range of developments in sustainable aviation, focusing on sustainable aviation fuels and briefly looking at
+        electric-powered aircraft. Taking research from a range of books, articles, and projects, I will present to you both promising and innovative
+        developments which are being used to both decarbonise aviation and increase its efficiency and affordability for people across the globe. 
+        The aerospace Industry is currently one of the most dynamic and growing industries in engineering and this article aims to both educate and
+        encourage readers to play their part in this worldwide fight against global warming. 
+      </pre>
 
   
 
@@ -170,103 +177,11 @@ SAFs and potentially all-electric aircraft becoming the norm.
     <p class="ex1">
         <pre>
 
-Colpan, C.O. and Kovac, A (2022). *Fuel cell and hydrogen technologies in aviation*, p.182-183.
 
-Collins Aerospace (2024). *Electrified Aircraft*. Available at: [https://www.collinsaerospace.com/](https://www.collinsaerospace.com/) (Accessed: 5 December 2024).
-
-European Union (2023). *Reducing emissions from aviation*. Available at: [https://ec.europa.eu/eurostat/](https://ec.europa.eu/eurostat/) 
-(Accessed: 4 December 2024).
-
-Garcia-Contreras, R. and Soriano, J.A. (2022). ‘Bio jet fuels and emissions’ in Gonzalez-Fernandez. *Sustainable Alternatives for Aviation Fuels*, p.177.
-
-Neste (2024). *The aviation industry must become more sustainable*. Available at: [https://www.neste.com/products-and-innovation/sustainable-aviation]
-(https://www.neste.com/products-and-innovation/sustainable-aviation) (Accessed: 4 December 2024).
-
-UCAR (2024). *Predictions of Future Global Climate*. Available at: [https://scied.ucar.edu/learning-zone/climate-change-impacts/predictions-future-global-climate]
-(https://scied.ucar.edu/learning-zone/climate-change-impacts/predictions-future-global-climate) (Accessed 4 December 2024).
 
         </pre>
     </p>
 
-</body>
-</html>
-<div id="last-updated">Loading last update time...</div>
-<!-- Verify Button -->
-<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
-    Verify Last Modified Time
-</button>
-<script>
-    async function getLastUpdatedTime() {
-        const username = 'nr0025';
-        const repo = 'FY0025';
-       
-        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
-        try {
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                }
-            });
-            if (!response.ok) {
-                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
-            }
-            const commits = await response.json();
-            if (commits && commits.length > 0) {
-                const lastCommitDate = new Date(commits[0].commit.committer.date);
-               
-                // Displaying the time on load
-                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
-            } else {
-                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
-            }
-        } catch (error) {
-            console.error('Error fetching the last updated time:', error);
-            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
-        }
-    }
-    // Function to verify the last update time by re-fetching it from the API
-    async function verifyLastUpdatedTime() {
-        document.getElementById('last-updated').innerText = 'Verifying...';
-        await getLastUpdatedTime();
-        alert("Last modified time has been successfully verified from GitHub API.");
-    }
-    // Initial load to display the time on page load
-    window.onload = getLastUpdatedTime;
-</script>
 
-
- <!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
-  <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
-<hr>
-<script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
-    // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
-    // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
-    // Count the words
-    const wordCount = wordArray.length;
-    // Return the word count for summing purposes
-    return wordCount;
-  }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
-    // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
-    // Display the total word count
-    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
-  }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
-</script>
-    
 
 </html>
