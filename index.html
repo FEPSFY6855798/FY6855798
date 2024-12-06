@@ -277,10 +277,13 @@ UCAR (2024) Predictions of Future Global Climate. Available at:<a href="https://
   // Function to calculate and display total word count from selected sections
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
+    const IntroductionCount = displayWordCount("Introduction to Sustainable Engineering");
+    const USGreenhouseGasEmissionsCount = displayWordCount("US Greenhouse Gas Emissions");
+    const SustainableAviationFuelsCount = displayWordCount("Sustainable Aviation Fuels");
+    const CollinsAerospaceCount = displayWordCount("Collins Aerospace");
+    const ConclusionCount = displayWordCount("Conclusion");
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const totalWordCount = IntroductionCount + USGreenhouseGasEmissionsCount + SustainableAviationFuelsCount + CollinsAerospaceCount + ConclusionCount;
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
